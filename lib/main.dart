@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/home_sreen.dart';
+import 'package:news_app/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,14 +8,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'News App',
-      home: Homesreen()
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
+        useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFF8F9FA),
+      ),
+      home: const SplashScreen(),
     );
   }
 }
-
